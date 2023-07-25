@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Dobra';
+  src: local('Dobra'), url('../content/fonts/Dobra-Book.woff') format('woff');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+:root {
+  --c-accent: #d7441a;
+  --c-white: #fcfeff;
+  --c-black: #050505;
+  --c-gray: #171918;
+
+  --border-radius-default: 0.1em;
+  --transition-default: all 0.15s ease;
+}
+
+body {
+  font-family: 'Dobra', sans-serif;
+  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url('../content/images/backgrounds/background-2.webp');
+
+  color: var(--c-white);
+}
+
+button {
+  border-radius: var(--border-radius-default);
+  position: relative;
+  padding: 0 0.75em;
+  background-color: var(--c-accent);
+  overflow: hidden;
+}
+
+a {
+  transition: var(--transition-default);
+  color: var(--c-accent);
+  border-bottom: 2px solid transparent;
+}
+
+blockquote {
+  border-left: 2px solid var(--c-white);
+  border-radius: var(--border-radius-default);
+  padding-left: 0.5em;
+}

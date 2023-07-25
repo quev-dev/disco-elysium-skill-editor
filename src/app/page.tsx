@@ -1,11 +1,18 @@
+'use client';
+
+import { Provider } from 'react-redux';
+import { store } from '../redux/store';
+import ReduxTest from '@/components/ReduxTest';
+
 export default function Home() {
   return (
-    <>
+    <Provider store={store}>
       <header className='p-8'>
         <h1 className='text-4xl'>Disco Elysium Skill Editor</h1>
       </header>
       <main className='p-8'>
         <h2></h2>
+        <ReduxTest />
       </main>
       <footer className='p-8'>
         <p>
@@ -21,6 +28,6 @@ export default function Home() {
           </a>
         </p>
       </footer>
-    </>
+    </Provider>
   );
 }

@@ -42,8 +42,8 @@ export default function ReduxTest() {
   };
 
   return (
-    <>
-      <div className='mb-8'>
+    <ul className='flex flex-wrap gap-8'>
+      <li className='mb-8'>
         <h3 className='text-3xl'>Attribute Scores</h3>
         <ul>
           <li>{scoreIntellect} - Intellect</li>
@@ -55,8 +55,8 @@ export default function ReduxTest() {
             <button onClick={increasePsyche}>+1 Psyche</button>
           </li>
         </ul>
-      </div>
-      <div>
+      </li>
+      <li>
         <h3 className='text-3xl'>Skill Scores</h3>
         <ul className='flex flex-row gap-8'>
           <li>
@@ -74,7 +74,7 @@ export default function ReduxTest() {
             <button onClick={increaseVolition}>+1 Volition</button>
           </li>
         </ul>
-      </div>
-    </>
+      </li>
+    </ul>
   );
 }

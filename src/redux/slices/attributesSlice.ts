@@ -1,11 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-interface AttributeState {
-  intellect: number;
-  psyche: number;
-  physique: number;
-  motorics: number;
-}
+import { AttributeState } from '../../types/scoreTypes';
 
 const initialState: AttributeState = {
   intellect: 1,

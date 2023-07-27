@@ -36,7 +36,7 @@ body {
 button {
   border-radius: var(--border-radius-default);
   position: relative;
-  padding: 0 0.75em;
+  padding: 0 0.75em 0.1em;
   background-color: var(--c-accent);
   overflow: hidden;
 }

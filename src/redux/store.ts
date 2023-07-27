@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import attributesReducer from './slices/attributesSlice';
+import skillsReducer from './slices/skillsSlice';
 
 export function makeStore() {
   return configureStore({
     reducer: {
       attributes: attributesReducer,
+      skills: skillsReducer,
     },
   });
 }

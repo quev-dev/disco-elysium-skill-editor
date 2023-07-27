@@ -7,7 +7,7 @@ import ReduxTest from '@/components/ReduxTest';
 export default function Home() {
   return (
     <Provider store={store}>
-      <header className='p-8'>
+      <header className='px-8 py-2'>
         <h1 className='text-4xl text-center m-4 mb-8 md:m-12 md:mb-4'>
           Disco Elysium Skill Editor
         </h1>
@@ -25,11 +25,11 @@ export default function Home() {
           . You can use it to create and edit a visual mimic of the player's stats.
         </p>
       </header>
-      <main className='p-8'>
+      <main className='px-8 py-2'>
         <h2></h2>
         <ReduxTest />
       </main>
-      <footer className='p-8'>
+      <footer className='px-8 py-2'>
         <p>
           You can view the source code for this fan-made project through its GitHub
           repository:{' '}

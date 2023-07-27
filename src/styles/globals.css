@@ -78,3 +78,8 @@ blockquote {
   position: absolute;
   background: linear-gradient(0deg, black, transparent);
 }
+
+.no-button-styling {
+  padding: 0;
+  background-color: transparent;
+}

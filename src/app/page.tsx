@@ -30,6 +30,7 @@ export default function Home() {
       <main className='px-8 py-2'>
         <ReduxTest />
         <SkillContainer />
+        <Attribute attributeName='ATTRIBUTE' />
       </main>
       <footer className='px-8 py-2'>
         <p>

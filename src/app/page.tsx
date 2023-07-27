@@ -3,6 +3,8 @@
 import { Provider } from 'react-redux';
 import { store } from '../redux/store';
 import ReduxTest from '@/components/ReduxTest';
+import Attribute from '@/components/Attribute';
+import SkillContainer from '@/components/SkillsContainer';
 
 export default function Home() {
   return (
@@ -26,8 +28,8 @@ export default function Home() {
         </p>
       </header>
       <main className='px-8 py-2'>
-        <h2></h2>
         <ReduxTest />
+        <SkillContainer />
       </main>
       <footer className='px-8 py-2'>
         <p>

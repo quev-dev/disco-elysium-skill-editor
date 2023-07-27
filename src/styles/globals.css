@@ -15,6 +15,7 @@
 }
 
 :root {
+  --c-light-gray: #2a2e2c;
   --c-accent: #d7441a;
   --c-white: #fcfeff;
   --c-black: #050505;
@@ -51,4 +52,29 @@ blockquote {
   border-left: 2px solid var(--c-white);
   border-radius: var(--border-radius-default);
   padding-left: 0.5em;
+}
+
+.skill-container {
+  border: solid 1px var(--c-light-gray);
+  position: relative;
+}
+.skill-score {
+  z-index: 5;
+  background-color: var(--c-white);
+  border-radius: var(--border-radius-default);
+  color: var(--c-black);
+  width: 1em;
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  text-align: center;
+}
+.skill-gradient-overlay {
+  z-index: 0;
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  background: linear-gradient(0deg, black, transparent);
 }

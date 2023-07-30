@@ -14,7 +14,7 @@ export default function Skill({ imageSource }: { imageSource: any }) {
       </h6>
       <ul className='absolute bottom-10 w-full flex justify-center z-10'>
         <li className='flex flex-row gap-1'>
-          <Image src={iconDiamondFill} width={14} height={14} alt='' />
+          <Image src={iconDiamondOutline} width={14} height={14} alt='' />
           <Image src={iconDiamondOutline} width={14} height={14} alt='' />
           <Image src={iconDiamondOutline} width={14} height={14} alt='' />
         </li>

@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import '../styles/animations.css';
+import '../styles/resize.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {

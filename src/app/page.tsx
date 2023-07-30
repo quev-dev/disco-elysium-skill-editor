@@ -29,8 +29,9 @@ export default function Home() {
       </header>
       <main className='px-8 py-2'>
         <ReduxTest />
-        <SkillContainer />
-        <Attribute attributeName='ATTRIBUTE' />
+        <div className='flex flex-row'>
+          <SkillContainer />
+        </div>
       </main>
       <footer className='px-8 py-2'>
         <p>

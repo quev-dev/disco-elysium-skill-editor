@@ -15,14 +15,15 @@
 }
 
 :root {
+  --c-lighter-gray: #3b413e;
   --c-light-gray: #2a2e2c;
   --c-accent: #d7441a;
   --c-white: #fcfeff;
   --c-black: #050505;
   --c-gray: #171918;
 
-  --border-radius-default: 0.1em;
-  --transition-default: all 0.15s ease;
+  --border-radius-default: 0.05em;
+  --transition-default: all 0.1s ease;
 }
 
 body {
@@ -35,17 +36,18 @@ body {
 }
 
 button {
+  color: var(--c-gray);
+  background-color: var(--c-accent);
+  transition: var(--transition-default);
   border-radius: var(--border-radius-default);
   position: relative;
   padding: 0 0.75em 0.1em;
-  background-color: var(--c-accent);
   overflow: hidden;
 }
 
 a {
   transition: var(--transition-default);
   color: var(--c-accent);
-  border-bottom: 2px solid transparent;
 }
 
 blockquote {
@@ -55,8 +57,11 @@ blockquote {
 }
 
 .skill-container {
+  transition: var(--transition-default);
   border: solid 1px var(--c-light-gray);
+  outline: solid 0px var(--c-light-gray);
   position: relative;
+  cursor: pointer;
 }
 .skill-score {
   z-index: 5;
@@ -82,4 +87,5 @@ blockquote {
 .no-button-styling {
   padding: 0;
   background-color: transparent;
+  color: var(--c-white);
 }

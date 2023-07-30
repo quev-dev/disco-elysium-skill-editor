@@ -1,34 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Disco Elysium Skill Editor
 
-## Getting Started
+## Introduction 🪩
 
-First, run the development server:
+This is an **unofficial**, fan-made web application developed to mimic the attributes and skills page from the critically-acclaimed RPG called [Disco Elysium](https://store.steampowered.com/app/632470/Disco_Elysium__The_Final_Cut/). You can use this app to edit a visual mimic of the player's stats.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+I hope players of the game find this app to be fun to use, and that it inspires more people to play the game.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You can visit the live version of this app [here](#).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The features listed below were implemented to replicate Disco Elysium's attributes/skills page as close as possible:
 
-## Learn More
+**Attributes**
 
-To learn more about Next.js, take a look at the following resources:
+- Each of the attributes (Intellect, Psyche, Physique and Motorics) can be leveled up, though they cannot go below 1.
+- The skills in the same container as the attribute are modified by the attribute score — for example, if Intellect is 3, then all Intellect skills will have a +3 modifier applied.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Skills**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- The score for each skill can be found on the bottom right of its portrait.
+- Each of the skills represent character traits and can be leveled up.
+- Each skill appears with a grayscale filter until it is leveled up.
 
-## Deploy on Vercel
+**Signature Skill**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- You can choose one of the skills as your "signature skill", giving it a crown icon and a +1 modifier.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Technologies
+
+Here are the technologies used to build this app:
+
+- Next.js
+- React.js
+- Redux
+- TypeScript
+- Tailwind CSS

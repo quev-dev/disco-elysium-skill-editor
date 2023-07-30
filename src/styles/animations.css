@@ -1,3 +1,14 @@
 a:hover {
-  border-bottom: solid 2px var(--c-accent);
+  text-decoration: underline;
+}
+button:hover {
+  color: var(--c-white);
+}
+
+.skill-container:hover {
+  outline: 4px solid var(--c-lighter-gray);
+  border-radius: var(--border-radius-default);
+}
+.skill-container:active {
+  filter: brightness(150%);
 }

@@ -6,12 +6,13 @@ import Image from 'next/image';
 import iconDiamondOutline from '../content/svgs/diamond-outline.svg';
 import iconDiamondFill from '../content/svgs/diamond-fill.svg';
 
-export default function Attribute({ attributeName }: { attributeName: string }) {
-  const [score, setScore] = useState(1);
-
-  const handleIncrement = () => setScore((prevScore) => prevScore + 1);
-  const handleDecrement = () => setScore((prevScore) => prevScore - 1);
-
+export default function Attribute({
+  attributeName = '',
+  score = 1,
+}: {
+  attributeName: string;
+  score: number;
+}) {
   const renderDiamonds = () => {
     const diamonds = [];
     for (let i = 0; i < score; i++) {

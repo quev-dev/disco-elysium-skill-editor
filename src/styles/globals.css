@@ -6,6 +6,10 @@
   font-family: 'Dobra';
   src: local('Dobra'), url('../content/fonts/Dobra-Book.woff') format('woff');
 }
+@font-face {
+  font-family: 'Dobra-Light';
+  src: local('Dobra-Light'), url('../content/fonts/Dobra-Light.woff') format('woff');
+}
 
 * {
   margin: 0;
@@ -64,15 +68,20 @@ blockquote {
   cursor: pointer;
 }
 .skill-score {
-  z-index: 5;
   background-color: var(--c-white);
   border-radius: var(--border-radius-default);
   color: var(--c-black);
-  width: 1em;
-  position: absolute;
+
+  width: 0.75em;
+  height: 1.25em;
   right: 4px;
   bottom: 4px;
-  text-align: center;
+  z-index: 5;
+
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .skill-gradient-overlay {
   z-index: 0;
@@ -84,8 +93,19 @@ blockquote {
   background: linear-gradient(0deg, black, transparent);
 }
 
+.skill-title {
+  z-index: 10;
+  position: absolute;
+  bottom: 0.25rem;
+  text-align: center;
+}
+
 .no-button-styling {
   padding: 0;
   background-color: transparent;
   color: var(--c-white);
+}
+
+.grayscale {
+  filter: grayscale(100%) brightness(50%);
 }

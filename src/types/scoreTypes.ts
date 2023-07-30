@@ -23,7 +23,7 @@ export interface SkillState {
   endurance: number;
   painThreshold: number;
   physicalInstrument: number;
-  electroChemistry: number;
+  electrochemistry: number;
   shivers: number;
   halfLight: number;
 

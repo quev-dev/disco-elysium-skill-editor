@@ -19,7 +19,7 @@ const initialState: SkillState = {
   endurance: 0,
   painThreshold: 0,
   physicalInstrument: 0,
-  electroChemistry: 0,
+  electrochemistry: 0,
   shivers: 0,
   halfLight: 0,
 
@@ -49,7 +49,7 @@ const attributeMap: { [key: string]: keyof SkillState } = {
   endurance: 'endurance',
   painThreshold: 'painThreshold',
   physicalInstrument: 'physicalInstrument',
-  electroChemistry: 'electroChemistry',
+  electrochemistry: 'electrochemistry',
   shivers: 'shivers',
   halfLight: 'halfLight',
 

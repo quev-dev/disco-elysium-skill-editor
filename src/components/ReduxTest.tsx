@@ -82,8 +82,8 @@ export default function ReduxTest() {
     dispatch(updateSkill({ skill: 'composure', value: skills.composure + 1 }));
 
   return (
-    <ul className='flex flex-row gap-8'>
-      <li className='mb-8 w-1/6'>
+    <ul className='flex flex-col md:flex-row gap-8'>
+      <li className='md:mb-8 md:w-1/6'>
         <h3 className='text-3xl'>Attributes</h3>
         <ul>
           <li className='flex flex-col gap-2'>
@@ -94,7 +94,7 @@ export default function ReduxTest() {
           </li>
         </ul>
       </li>
-      <li className='w-5/6'>
+      <li className='md:w-5/6'>
         <h3 className='text-3xl'>Skills</h3>
         <ul className='flex flex-row gap-4 text-base'>
           <li className='flex flex-col gap-2'>

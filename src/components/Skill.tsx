@@ -29,7 +29,7 @@ export default function Skill({
       </div>
       <p className='skill-score'>{score + modifier}</p>
       <h6
-        className={`skill-title text-sm tracking-tight leading-4 ${
+        className={`skill-title text-xs md:text-sm md:tracking-tight md:leading-4 ${
           isLong ? 'w-5/6' : 'w-full'
         }${isLong && hasSpaces ? ' left-0' : ' '}
         ${isVeryLong && !hasSpaces ? '-left-2 scale-x-75' : ' '}

@@ -27,20 +27,20 @@ export default function Home() {
           . You can use it to create and edit a visual mimic of the player's stats.
         </p>
       </header>
-      <main className='px-8 py-2'>
+      <main className='px-1 md:px-8 py-2'>
         <ReduxTest />
         <div className='flex flex-row'>
           <SkillContainer />
         </div>
       </main>
-      <footer className='px-8 py-2'>
+      <footer className='p-8 md:p-16'>
         <p>
           You can view the source code for this fan-made project through its GitHub
-          repository:{' '}
-          <a href='https://github.com/quev-dev/disco-elysium-skill-editor'>
-            disco-elysium-skill-editor
-          </a>
+          repository:
         </p>
+        <a href='https://github.com/quev-dev/disco-elysium-skill-editor'>
+          disco-elysium-skill-editor
+        </a>
       </footer>
     </Provider>
   );

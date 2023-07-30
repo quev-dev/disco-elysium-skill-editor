@@ -16,12 +16,12 @@ export default function SkillsContainer() {
   const MOTORICS = attributes.motorics;
 
   return (
-    <ul className='mt-6 flex flex-col gap-2'>
-      <li className='flex flex-row gap-2'>
-        <div className='w-1/6'>
+    <ul className='mt-6 flex flex-row md:flex-col gap-1 md:gap-2'>
+      <li className='flex flex-col md:flex-row gap-2'>
+        <div className='md:w-1/6'>
           <Attribute attributeName='INTELLECT' score={INTELLECT} />
         </div>
-        <div className='w-5/6 flex flex-row gap-2'>
+        <div className='md:w-5/6 flex flex-col md:flex-row gap-1 md:gap-2'>
           <Skill
             title='LOGIC'
             score={skills.logic}
@@ -60,11 +60,11 @@ export default function SkillsContainer() {
           />
         </div>
       </li>
-      <li className='flex flex-row gap-2'>
-        <div className='w-1/6'>
+      <li className='flex flex-col md:flex-row gap-2'>
+        <div className='md:w-1/6'>
           <Attribute attributeName='PSYCHE' score={PSYCHE} />
         </div>
-        <div className='w-5/6 flex flex-row gap-2'>
+        <div className='md:w-5/6 flex flex-col md:flex-row gap-1 md:gap-2'>
           <Skill
             title='VOLITION'
             score={skills.volition}
@@ -103,11 +103,11 @@ export default function SkillsContainer() {
           />
         </div>
       </li>
-      <li className='flex flex-row gap-2'>
-        <div className='w-1/6'>
+      <li className='flex flex-col md:flex-row gap-2'>
+        <div className='md:w-1/6'>
           <Attribute attributeName='PHYSIQUE' score={PHYSIQUE} />
         </div>
-        <div className='w-5/6 flex flex-row gap-2'>
+        <div className='md:w-5/6 flex flex-col md:flex-row gap-1 md:gap-2'>
           <Skill
             title='ENDURANCE'
             score={skills.endurance}
@@ -146,11 +146,11 @@ export default function SkillsContainer() {
           />
         </div>
       </li>
-      <li className='flex flex-row gap-2'>
-        <div className='w-1/6'>
+      <li className='flex flex-col md:flex-row gap-2'>
+        <div className='md:w-1/6'>
           <Attribute attributeName='MOTORICS' score={MOTORICS} />
         </div>
-        <div className='w-5/6 flex flex-row gap-2'>
+        <div className='md:w-5/6 flex flex-col md:flex-row gap-1 md:gap-2'>
           <Skill
             title='HAND / EYE COORDINATION'
             score={skills.handEyeCoordination}

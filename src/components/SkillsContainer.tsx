@@ -7,8 +7,9 @@ import Skill from './Skill';
 import Attribute from './Attribute';
 
 export default function SkillsContainer() {
-  const attributes = useSelector((state: RootState) => state.attributes);
   const skills = useSelector((state: RootState) => state.skills);
+  const signature = useSelector((state: RootState) => state.signature.skill);
+  const attributes = useSelector((state: RootState) => state.attributes);
 
   const INTELLECT = attributes.intellect;
   const PSYCHE = attributes.psyche;
@@ -23,36 +24,42 @@ export default function SkillsContainer() {
         </div>
         <div className='md:w-5/6 flex flex-col md:flex-row gap-1 md:gap-2'>
           <Skill
+            isSignature={signature === 'logic'}
             title='LOGIC'
             score={skills.logic}
             modifier={INTELLECT}
             imageSource={skillImages.logic}
           />
           <Skill
+            isSignature={signature === 'encyclopedia'}
             title='ENCYCLOPEDIA'
             score={skills.encyclopedia}
             modifier={INTELLECT}
             imageSource={skillImages.encyclopedia}
           />
           <Skill
+            isSignature={signature === 'rhetoric'}
             title='RHETORIC'
             score={skills.rhetoric}
             modifier={INTELLECT}
             imageSource={skillImages.rhetoric}
           />
           <Skill
+            isSignature={signature === 'drama'}
             title='DRAMA'
             score={skills.drama}
             modifier={INTELLECT}
             imageSource={skillImages.drama}
           />
           <Skill
+            isSignature={signature === 'conceptualization'}
             title='CONCEPTUALIZATION'
             score={skills.conceptualization}
             modifier={INTELLECT}
             imageSource={skillImages.conceptualization}
           />
           <Skill
+            isSignature={signature === 'visualCalculus'}
             title='VISUAL CALCULUS'
             score={skills.visualCalculus}
             modifier={INTELLECT}
@@ -66,36 +73,42 @@ export default function SkillsContainer() {
         </div>
         <div className='md:w-5/6 flex flex-col md:flex-row gap-1 md:gap-2'>
           <Skill
+            isSignature={signature === 'volition'}
             title='VOLITION'
             score={skills.volition}
             modifier={PSYCHE}
             imageSource={skillImages.volition}
           />
           <Skill
+            isSignature={signature === 'inlandEmpire'}
             title='INLAND EMPIRE'
             score={skills.inlandEmpire}
             modifier={PSYCHE}
             imageSource={skillImages.inlandEmpire}
           />
           <Skill
+            isSignature={signature === 'empathy'}
             title='EMPATHY'
             score={skills.empathy}
             modifier={PSYCHE}
             imageSource={skillImages.empathy}
           />
           <Skill
+            isSignature={signature === 'authority'}
             title='AUTHORITY'
             score={skills.authority}
             modifier={PSYCHE}
             imageSource={skillImages.authority}
           />
           <Skill
+            isSignature={signature === 'espritDeCorps'}
             title='ESPRIT DE CORPS'
             score={skills.espritDeCorps}
             modifier={PSYCHE}
             imageSource={skillImages.espritDeCorps}
           />
           <Skill
+            isSignature={signature === 'suggestion'}
             title='SUGGESTION'
             score={skills.suggestion}
             modifier={PSYCHE}
@@ -109,36 +122,42 @@ export default function SkillsContainer() {
         </div>
         <div className='md:w-5/6 flex flex-col md:flex-row gap-1 md:gap-2'>
           <Skill
+            isSignature={signature === 'endurance'}
             title='ENDURANCE'
             score={skills.endurance}
             modifier={PHYSIQUE}
             imageSource={skillImages.endurance}
           />
           <Skill
+            isSignature={signature === 'painThreshold'}
             title='PAIN THRESHOLD'
             score={skills.painThreshold}
             modifier={PHYSIQUE}
             imageSource={skillImages.painThreshold}
           />
           <Skill
+            isSignature={signature === 'physicalInstrument'}
             title='PHYSICAL INSTRUMENT'
             score={skills.physicalInstrument}
             modifier={PHYSIQUE}
             imageSource={skillImages.physicalInstrument}
           />
           <Skill
+            isSignature={signature === 'electrochemistry'}
             title='ELECTROCHEMISTRY'
             score={skills.electrochemistry}
             modifier={PHYSIQUE}
             imageSource={skillImages.electrochemistry}
           />
           <Skill
+            isSignature={signature === 'shivers'}
             title='SHIVERS'
             score={skills.shivers}
             modifier={PHYSIQUE}
             imageSource={skillImages.shivers}
           />
           <Skill
+            isSignature={signature === 'halfLight'}
             title='HALF LIGHT'
             score={skills.halfLight}
             modifier={PHYSIQUE}
@@ -152,36 +171,42 @@ export default function SkillsContainer() {
         </div>
         <div className='md:w-5/6 flex flex-col md:flex-row gap-1 md:gap-2'>
           <Skill
+            isSignature={signature === 'handEyeCoordination'}
             title='HAND / EYE COORDINATION'
             score={skills.handEyeCoordination}
             modifier={MOTORICS}
             imageSource={skillImages.handEyeCoordination}
           />
           <Skill
+            isSignature={signature === 'perception'}
             title='PERCEPTION'
             score={skills.perception}
             modifier={MOTORICS}
             imageSource={skillImages.perception}
           />
           <Skill
+            isSignature={signature === 'reactionSpeed'}
             title='REACTION SPEED'
             score={skills.reactionSpeed}
             modifier={MOTORICS}
             imageSource={skillImages.reactionSpeed}
           />
           <Skill
+            isSignature={signature === 'savoirFaire'}
             title='SAVOIR FAIRE'
             score={skills.savoirFaire}
             modifier={MOTORICS}
             imageSource={skillImages.savoirFaire}
           />
           <Skill
+            isSignature={signature === 'interfacing'}
             title='INTERFACING'
             score={skills.interfacing}
             modifier={MOTORICS}
             imageSource={skillImages.interfacing}
           />
           <Skill
+            isSignature={signature === 'composure'}
             title='COMPOSURE'
             score={skills.composure}
             modifier={MOTORICS}

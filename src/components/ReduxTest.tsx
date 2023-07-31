@@ -4,11 +4,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../redux/store';
 import { updateAttribute } from '../redux/slices/attributesSlice';
 import { updateSkill } from '../redux/slices/skillsSlice';
+import { setSignatureSkill, resetSignatureSkill } from '../redux/slices/signatureSlice';
+import { SkillState } from '@/types/scoreTypes';
 
 export default function ReduxTest() {
+  const dispatch = useDispatch();
   const attributes = useSelector((state: RootState) => state.attributes);
   const skills = useSelector((state: RootState) => state.skills);
-  const dispatch = useDispatch();
 
   const increaseIntellect = () =>
     dispatch(
@@ -81,62 +83,77 @@ export default function ReduxTest() {
   const increaseComposure = () =>
     dispatch(updateSkill({ skill: 'composure', value: skills.composure + 1 }));
 
+  const handleSetSignature = (skill: keyof SkillState) => {
+    dispatch(resetSignatureSkill());
+    dispatch(setSignatureSkill(skill));
+  };
+
   return (
-    <ul className='flex flex-col md:flex-row gap-8'>
-      <li className='md:mb-8 md:w-1/6'>
-        <h3 className='text-3xl'>Attributes</h3>
-        <ul>
-          <li className='flex flex-col gap-2'>
-            <button onClick={increaseIntellect}>+1 Intellect</button>
-            <button onClick={increasePsyche}>+1 Psyche</button>
-            <button onClick={increasePhysique}>+1 Physique</button>
-            <button onClick={increaseMotorics}>+1 Motorics</button>
-          </li>
-        </ul>
-      </li>
-      <li className='md:w-5/6'>
-        <h3 className='text-3xl'>Skills</h3>
-        <ul className='flex flex-row gap-4 text-base'>
-          <li className='flex flex-col gap-2'>
-            <h4>Intellect</h4>
-            <button onClick={increaseLogic}>+1 Logic</button>
-            <button onClick={increaseEncyclopedia}>+1 Encyclopedia</button>
-            <button onClick={increaseRhetoric}>+1 Rhetoric</button>
-            <button onClick={increaseDrama}>+1 Drama</button>
-            <button onClick={increaseConceptualization}>+1 Conceptualization</button>
-            <button onClick={increaseVisualCalculus}>+1 Visual Calculus</button>
-          </li>
-          <li className='flex flex-col gap-2'>
-            <h4>Psyche</h4>
-            <button onClick={increaseVolition}>+1 Volition</button>
-            <button onClick={increaseInlandEmpire}>+1 Inland Empire</button>
-            <button onClick={increaseEmpathy}>+1 Empathy</button>
-            <button onClick={increaseAuthority}>+1 Authority</button>
-            <button onClick={increaseEspritDeCorps}>+1 Esprit De Corps</button>
-            <button onClick={increaseSuggestion}>+1 Suggestion</button>
-          </li>
-          <li className='flex flex-col gap-2'>
-            <h4>Physique</h4>
-            <button onClick={increaseEndurance}>+1 Endurance</button>
-            <button onClick={increasePainThreshold}>+1 Pain Threshold</button>
-            <button onClick={increasePhysicalInstrument}>+1 Physical Instrument</button>
-            <button onClick={increaseElectrochemistry}>+1 Electrochemistry</button>
-            <button onClick={increaseShivers}>+1 Shivers</button>
-            <button onClick={increaseHalfLight}>+1 Half Light</button>
-          </li>
-          <li className='flex flex-col gap-2'>
-            <h4>Motorics</h4>
-            <button onClick={increaseHandEyeCoordination}>
-              +1 Hand / Eye Coordination
-            </button>
-            <button onClick={increasePerception}>+1 Perception</button>
-            <button onClick={increaseReactionSpeed}>+1 Reaction Speed</button>
-            <button onClick={increaseSavoirFaire}>+1 Savoir Faire</button>
-            <button onClick={increaseInterfacing}>+1 Interfacing</button>
-            <button onClick={increaseComposure}>+1 Composure</button>
-          </li>
-        </ul>
-      </li>
-    </ul>
+    <>
+      <ul className='flex flex-col md:flex-row gap-8'>
+        <li className='md:mb-8 md:w-1/6'>
+          <h3 className='text-3xl'>Attributes</h3>
+          <ul>
+            <li className='flex flex-col gap-2'>
+              <button onClick={increaseIntellect}>+1 Intellect</button>
+              <button onClick={increasePsyche}>+1 Psyche</button>
+              <button onClick={increasePhysique}>+1 Physique</button>
+              <button onClick={increaseMotorics}>+1 Motorics</button>
+            </li>
+          </ul>
+        </li>
+        <li className='md:w-5/6'>
+          <h3 className='text-3xl'>Skills</h3>
+          <ul className='flex flex-row gap-4 text-base'>
+            <li className='flex flex-col gap-2'>
+              <h4>Intellect</h4>
+              <button onClick={increaseLogic}>+1 Logic</button>
+              <button onClick={increaseEncyclopedia}>+1 Encyclopedia</button>
+              <button onClick={increaseRhetoric}>+1 Rhetoric</button>
+              <button onClick={increaseDrama}>+1 Drama</button>
+              <button onClick={increaseConceptualization}>+1 Conceptualization</button>
+              <button onClick={increaseVisualCalculus}>+1 Visual Calculus</button>
+            </li>
+            <li className='flex flex-col gap-2'>
+              <h4>Psyche</h4>
+              <button onClick={increaseVolition}>+1 Volition</button>
+              <button onClick={increaseInlandEmpire}>+1 Inland Empire</button>
+              <button onClick={increaseEmpathy}>+1 Empathy</button>
+              <button onClick={increaseAuthority}>+1 Authority</button>
+              <button onClick={increaseEspritDeCorps}>+1 Esprit De Corps</button>
+              <button onClick={increaseSuggestion}>+1 Suggestion</button>
+            </li>
+            <li className='flex flex-col gap-2'>
+              <h4>Physique</h4>
+              <button onClick={increaseEndurance}>+1 Endurance</button>
+              <button onClick={increasePainThreshold}>+1 Pain Threshold</button>
+              <button onClick={increasePhysicalInstrument}>+1 Physical Instrument</button>
+              <button onClick={increaseElectrochemistry}>+1 Electrochemistry</button>
+              <button onClick={increaseShivers}>+1 Shivers</button>
+              <button onClick={increaseHalfLight}>+1 Half Light</button>
+            </li>
+            <li className='flex flex-col gap-2'>
+              <h4>Motorics</h4>
+              <button onClick={increaseHandEyeCoordination}>
+                +1 Hand / Eye Coordination
+              </button>
+              <button onClick={increasePerception}>+1 Perception</button>
+              <button onClick={increaseReactionSpeed}>+1 Reaction Speed</button>
+              <button onClick={increaseSavoirFaire}>+1 Savoir Faire</button>
+              <button onClick={increaseInterfacing}>+1 Interfacing</button>
+              <button onClick={increaseComposure}>+1 Composure</button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <aside className='mt-4 flex flex-row gap-2 text-base'>
+        <button onClick={() => handleSetSignature('logic')}>Sign "Logic"</button>
+        <button onClick={() => handleSetSignature('volition')}>Sign "Volition"</button>
+        <button onClick={() => handleSetSignature('endurance')}>Sign "Endurance"</button>
+        <button onClick={() => handleSetSignature('handEyeCoordination')}>
+          Sign "Hand / Eye Coordination"
+        </button>
+      </aside>
+    </>
   );
 }

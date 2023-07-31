@@ -22,12 +22,18 @@ export default function Skill({
   const isVeryLong = title.length >= 16;
   const hasSpaces = title.includes(' ');
 
-  const filledDiamonds = Math.min(score, modifier);
-  const remainingOutlineDiamonds = Math.max(modifier - score, 0);
+  let newModifier = modifier;
+  if (isSignature) {
+    score++;
+    newModifier++;
+  }
+
+  const filledDiamonds = Math.min(score, newModifier);
+  const remainingOutlineDiamonds = Math.max(newModifier - score, 0);
 
   return (
     <div className='skill-container'>
-      <div className={score === 0 ? 'grayscale' : ''}>
+      <div className={score === 0 && !isSignature ? 'grayscale' : ''}>
         <Image layout='responsive' src={imageSource} width={368} height={512} alt='' />
       </div>
       {isSignature && (

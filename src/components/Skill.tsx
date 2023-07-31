@@ -3,17 +3,20 @@
 import Image from 'next/image';
 import iconDiamondOutline from '../content/svgs/diamond-outline.svg';
 import iconDiamondFill from '../content/svgs/diamond-fill.svg';
+import iconSignature from '../content/icons/signature.png';
 
 export default function Skill({
   imageSource,
   score = 0,
   modifier = 1,
   title = '[title]',
+  isSignature = false,
 }: {
   imageSource: any;
   score: number;
   modifier: number;
   title: string;
+  isSignature: boolean;
 }) {
   const isLong = title.length >= 12;
   const isVeryLong = title.length >= 16;
@@ -27,6 +30,19 @@ export default function Skill({
       <div className={score === 0 ? 'grayscale' : ''}>
         <Image layout='responsive' src={imageSource} width={368} height={512} alt='' />
       </div>
+      {isSignature && (
+        <div className='absolute top-0 w-full flex items-center justify-center'>
+          <div className='w-2/3'>
+            <Image
+              layout='responsive'
+              src={iconSignature}
+              width={368}
+              height={368}
+              alt=''
+            />
+          </div>
+        </div>
+      )}
       <p className='skill-score'>{score + modifier}</p>
       <h6
         className={`skill-title text-xs md:text-sm md:tracking-tight md:leading-4 ${

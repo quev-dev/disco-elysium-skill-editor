@@ -3,7 +3,6 @@
 import { useState } from 'react';
 
 import Image from 'next/image';
-import iconDiamondOutline from '../content/svgs/diamond-outline.svg';
 import iconDiamondFill from '../content/svgs/diamond-fill.svg';
 
 export default function Attribute({

@@ -2,7 +2,7 @@
 
 ## Introduction 🪩
 
-This is an **unofficial**, fan-made web application developed to mimic the attributes and skills page from the critically-acclaimed RPG called [Disco Elysium](https://store.steampowered.com/app/632470/Disco_Elysium__The_Final_Cut/). You can use this app to edit a visual mimic of the player's stats.
+This is an unofficial, fan-made web application developed to mimic the attributes and skills page from the critically-acclaimed RPG called [Disco Elysium](https://store.steampowered.com/app/632470/Disco_Elysium__The_Final_Cut/). You can use this app to edit a visual mimic of the player's stats.
 
 I hope players of the game find this app to be fun to use, and that it inspires more people to play the game.
 
@@ -36,3 +36,7 @@ Here are the technologies used to build this app:
 - Redux
 - TypeScript
 - Tailwind CSS
+
+Although it was not necessary to use Redux or Next.js for this project, and it would have been just as possible to develop the project using only React.js and `useState` hooks, I wanted to take this as an opportunity to familiarize myself with Next.js, TypeScript, and Redux.
+
+If you are planning to work on a project with a similar scope, remember that Redux is most practically used for large projects and teams — prioritize learning the fundamentals first.

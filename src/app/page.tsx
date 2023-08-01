@@ -2,6 +2,7 @@
 
 import { Provider } from 'react-redux';
 import { store } from '../redux/store';
+import Points from '@/components/Points';
 import ReduxTest from '@/components/ReduxTest';
 import Attribute from '@/components/Attribute';
 import SkillContainer from '@/components/SkillsContainer';
@@ -27,11 +28,17 @@ export default function Home() {
           . You can use it to create and edit a visual mimic of the player's stats.
         </p>
       </header>
-      <main className='px-1 md:px-8 py-2'>
+      <main className='py-2'>
         <ReduxTest />
-        <div className='flex flex-row'>
-          <SkillContainer />
-        </div>
+        <Points />
+        <ul className='flex flex-col 2xl:flex-row justify-center items-center'>
+          <li id='skill-container' className='2xl:px-24 py-8 2xl:w-2/3'>
+            <SkillContainer />
+          </li>
+          <li id='side-panel-container' className='2xl:px-24 py-12 2xl:w-1/3'>
+            <p>Hi</p>
+          </li>
+        </ul>
       </main>
       <footer className='p-8 md:p-16'>
         <p>

@@ -1,12 +1,14 @@
 'use client';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../redux/store';
 import { skillImages } from '@/utils/skillImages';
+import { updateAttribute } from '../redux/slices/attributesSlice';
 import Skill from './Skill';
 import Attribute from './Attribute';
 
 export default function SkillsContainer() {
+  const dispatch = useDispatch();
   const skills = useSelector((state: RootState) => state.skills);
   const signature = useSelector((state: RootState) => state.signature.skill);
   const attributes = useSelector((state: RootState) => state.attributes);
@@ -16,11 +18,38 @@ export default function SkillsContainer() {
   const PHYSIQUE = attributes.physique;
   const MOTORICS = attributes.motorics;
 
+  const updateIntellect = (value: number) => {
+    if (value < 0 && attributes.intellect + value < 1) return;
+    dispatch(
+      updateAttribute({ attribute: 'intellect', value: attributes.intellect + value })
+    );
+  };
+  const updatePsyche = (value: number) => {
+    if (value < 0 && attributes.psyche + value < 1) return;
+    dispatch(updateAttribute({ attribute: 'psyche', value: attributes.psyche + value }));
+  };
+  const updatePhysique = (value: number) => {
+    if (value < 0 && attributes.physique + value < 1) return;
+    dispatch(
+      updateAttribute({ attribute: 'physique', value: attributes.physique + value })
+    );
+  };
+  const updateMotorics = (value: number) => {
+    if (value < 0 && attributes.motorics + value < 1) return;
+    dispatch(
+      updateAttribute({ attribute: 'motorics', value: attributes.motorics + value })
+    );
+  };
+
   return (
-    <ul className='mt-6 flex flex-row md:flex-col gap-1 md:gap-2'>
+    <ul className='flex flex-row md:flex-col gap-1 md:gap-2'>
       <li className='flex flex-col md:flex-row gap-2'>
         <div className='md:w-1/6'>
-          <Attribute attributeName='INTELLECT' score={INTELLECT} />
+          <Attribute
+            attributeName='INTELLECT'
+            score={INTELLECT}
+            updateFunction={updateIntellect}
+          />
         </div>
         <div className='md:w-5/6 flex flex-col md:flex-row gap-1 md:gap-2'>
           <Skill
@@ -69,7 +98,11 @@ export default function SkillsContainer() {
       </li>
       <li className='flex flex-col md:flex-row gap-2'>
         <div className='md:w-1/6'>
-          <Attribute attributeName='PSYCHE' score={PSYCHE} />
+          <Attribute
+            attributeName='PSYCHE'
+            score={PSYCHE}
+            updateFunction={updatePsyche}
+          />
         </div>
         <div className='md:w-5/6 flex flex-col md:flex-row gap-1 md:gap-2'>
           <Skill
@@ -118,7 +151,11 @@ export default function SkillsContainer() {
       </li>
       <li className='flex flex-col md:flex-row gap-2'>
         <div className='md:w-1/6'>
-          <Attribute attributeName='PHYSIQUE' score={PHYSIQUE} />
+          <Attribute
+            attributeName='PHYSIQUE'
+            score={PHYSIQUE}
+            updateFunction={updatePhysique}
+          />
         </div>
         <div className='md:w-5/6 flex flex-col md:flex-row gap-1 md:gap-2'>
           <Skill
@@ -167,7 +204,11 @@ export default function SkillsContainer() {
       </li>
       <li className='flex flex-col md:flex-row gap-2'>
         <div className='md:w-1/6'>
-          <Attribute attributeName='MOTORICS' score={MOTORICS} />
+          <Attribute
+            attributeName='MOTORICS'
+            score={MOTORICS}
+            updateFunction={updateMotorics}
+          />
         </div>
         <div className='md:w-5/6 flex flex-col md:flex-row gap-1 md:gap-2'>
           <Skill

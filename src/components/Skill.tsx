@@ -51,7 +51,7 @@ export default function Skill({
       )}
       <p className='skill-score'>{score + modifier}</p>
       <h6
-        className={`skill-title text-xs md:text-sm md:tracking-tight md:leading-4 ${
+        className={`skill-title text-xs md:text-sm lg:text-base md:tracking-tight md:leading-4 lg:leading-4 ${
           isLong ? 'w-5/6' : 'w-full'
         }${isLong && hasSpaces ? ' left-0' : ' '}
         ${isVeryLong && !hasSpaces ? '-left-2 scale-x-75' : ' '}
@@ -60,7 +60,7 @@ export default function Skill({
         {title}
       </h6>
       <ul className='absolute bottom-10 w-full flex justify-center z-10'>
-        <li className='flex flex-row gap-1'>
+        <li className='flex flex-wrap items-center justify-center gap-1'>
           {Array.from({ length: filledDiamonds }).map((_, index) => (
             <Image key={index} src={iconDiamondFill} width={14} height={14} alt='' />
           ))}

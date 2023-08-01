@@ -30,11 +30,33 @@
   --transition-default: all 0.1s ease;
 }
 
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #d7441a;
+}
+
+::webkit-scrollbar {
+  background-color: #171918;
+  width: 12px;
+}
+::webkit-scrollbar-thumb {
+  background-color: #d7441a;
+  border-radius: 100vw;
+  border: solid 2px #171918;
+}
+:webkit-scrollbar-track {
+  background-color: #d7441a;
+  margin-block: 0.5em;
+}
+::webkit-scrollbar-corner {
+  background-color: #d7441a;
+}
+
 body {
   font-family: 'Dobra', sans-serif;
-  background-size: cover;
   background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
     url('../content/images/backgrounds/background-2.webp');
+  background-size: cover;
 
   color: var(--c-white);
 }
@@ -108,4 +130,15 @@ blockquote {
 
 .grayscale {
   filter: grayscale(100%) brightness(50%);
+}
+
+#skill-container {
+  background: url('../content/images/ui/panel-thick-horizontal.png');
+  background-size: cover;
+  background-repeat: repeat-x;
+}
+#side-panel-container {
+  background: url('../content/images/ui/panel-thin.png');
+  background-size: cover;
+  background-repeat: repeat-y;
 }

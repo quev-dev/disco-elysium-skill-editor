@@ -31,6 +31,9 @@ export default function Skill({
   const filledDiamonds = Math.min(score, newModifier);
   const remainingOutlineDiamonds = Math.max(newModifier - score, 0);
 
+  const totalDiamonds = newModifier;
+  const diamondLimit = 11;
+
   return (
     <div className='skill-container'>
       <div className={score === 0 && !isSignature ? 'grayscale' : ''}>
@@ -61,12 +64,41 @@ export default function Skill({
       </h6>
       <ul className='absolute bottom-10 w-full flex justify-center z-10'>
         <li className='flex flex-wrap items-center justify-center gap-1'>
-          {Array.from({ length: filledDiamonds }).map((_, index) => (
-            <Image key={index} src={iconDiamondFill} width={14} height={14} alt='' />
-          ))}
-          {Array.from({ length: remainingOutlineDiamonds }).map((_, index) => (
-            <Image key={index} src={iconDiamondOutline} width={14} height={14} alt='' />
-          ))}
+          {totalDiamonds <= diamondLimit && (
+            <>
+              {Array.from({ length: filledDiamonds }).map((_, index) => (
+                <Image key={index} src={iconDiamondFill} width={14} height={14} alt='' />
+              ))}
+              {Array.from({ length: remainingOutlineDiamonds }).map((_, index) => (
+                <Image
+                  key={index}
+                  src={iconDiamondOutline}
+                  width={14}
+                  height={14}
+                  alt=''
+                />
+              ))}
+            </>
+          )}
+          {totalDiamonds > diamondLimit && (
+            <>
+              {Array.from({ length: Math.min(score, diamondLimit) }).map((_, index) => (
+                <Image key={index} src={iconDiamondFill} width={14} height={14} alt='' />
+              ))}
+              {Array.from({ length: Math.max(diamondLimit - score, 0) }).map(
+                (_, index) => (
+                  <Image
+                    key={index}
+                    src={iconDiamondOutline}
+                    width={14}
+                    height={14}
+                    alt=''
+                  />
+                )
+              )}
+              <span className='text-xs font-bold'>. . .</span>
+            </>
+          )}
         </li>
       </ul>
       <div className='skill-gradient-overlay' />

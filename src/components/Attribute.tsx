@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
 import iconDiamondFill from '../content/svgs/diamond-fill.svg';
 
@@ -14,10 +13,13 @@ export default function Attribute({
   updateFunction: any;
 }) {
   const renderDiamonds = () => {
+    const maxDiamonds = 11;
     const diamonds = [];
-    for (let i = 0; i < score; i++) {
+    const renderedDiamonds = Math.min(score, maxDiamonds);
+
+    for (let i = 0; i < renderedDiamonds; i++) {
       diamonds.push(
-        <li key={i}>
+        <li className='relative' key={i}>
           <Image
             src={iconDiamondFill}
             alt=''
@@ -27,6 +29,17 @@ export default function Attribute({
         </li>
       );
     }
+
+    if (score > maxDiamonds) {
+      diamonds.push(
+        <li key='ellipsis'>
+          <span className='font-bold text-xs md:text-base absolute -translate-y-2'>
+            . . .
+          </span>
+        </li>
+      );
+    }
+
     return diamonds;
   };
 
@@ -34,7 +47,7 @@ export default function Attribute({
     <aside className='flex flex-col items-center justify-center h-full w-full'>
       <div>
         <div className='flex flex-col-reverse md:flex-row gap-2 items-center justify-center'>
-          <p className='font-bold text-5xl md:text-8xl lg:text-9xl'>{score}</p>
+          <p className='font-bold text-5xl md:text-8xl tracking-tighter'>{score}</p>
           <div className='flex flex-col items-center justify-center relative top-1 gap-1'>
             <button
               onClick={() => updateFunction(1)}

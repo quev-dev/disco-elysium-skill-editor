@@ -28,7 +28,7 @@ const attributesSlice = createSlice({
       if (attributeName) {
         return {
           ...state,
-          [attributeName]: value,
+          [attributeName]: Math.min(value, 99),
         };
       }
       return state;

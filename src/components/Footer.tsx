@@ -9,13 +9,13 @@ export default function Footer() {
       <ul className='mb-4'>
         <li>
           <p>
-            If you'd like to learn more about the game, you can visit its official sites
-            through the links below:
+            If you'd like to learn more about the game, you can visit its
+            official sites through the links below:
           </p>
         </li>
-        <li className='flex flex-col max-w-max'>
+        <li className='flex flex-col'>
           <a
-            className='flex flex-row items-center gap-1'
+            className='flex flex-row items-center gap-1 max-w-max'
             target='_blank'
             rel='noreferrer'
             href='https://discoelysium.com/'
@@ -24,7 +24,7 @@ export default function Footer() {
             <p>Official Website</p>
           </a>
           <a
-            className='flex flex-row items-center gap-1'
+            className='flex flex-row items-center gap-1 max-w-max'
             target='_blank'
             rel='noreferrer'
             href='https://store.steampowered.com/app/632470/Disco_Elysium__The_Final_Cut/'
@@ -36,11 +36,11 @@ export default function Footer() {
       </ul>
       <h6 className='font-bold'>Source Code</h6>
       <p>
-        You can view the source code for this fan-made project through its GitHub
-        repository:{' '}
+        You can view the source code for this fan-made project through its
+        GitHub repository:{' '}
       </p>
       <a
-        className='flex flex-row items-center gap-1'
+        className='flex flex-row items-center gap-1 max-w-max'
         target='_blank'
         rel='noreferrer'
         href='https://github.com/quev-dev/disco-elysium-skill-editor'

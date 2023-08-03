@@ -21,23 +21,34 @@ export default function SkillsContainer() {
   const updateIntellect = (value: number) => {
     if (value < 0 && attributes.intellect + value < 1) return;
     dispatch(
-      updateAttribute({ attribute: 'intellect', value: attributes.intellect + value })
+      updateAttribute({
+        attribute: 'intellect',
+        value: attributes.intellect + value,
+      })
     );
   };
   const updatePsyche = (value: number) => {
     if (value < 0 && attributes.psyche + value < 1) return;
-    dispatch(updateAttribute({ attribute: 'psyche', value: attributes.psyche + value }));
+    dispatch(
+      updateAttribute({ attribute: 'psyche', value: attributes.psyche + value })
+    );
   };
   const updatePhysique = (value: number) => {
     if (value < 0 && attributes.physique + value < 1) return;
     dispatch(
-      updateAttribute({ attribute: 'physique', value: attributes.physique + value })
+      updateAttribute({
+        attribute: 'physique',
+        value: attributes.physique + value,
+      })
     );
   };
   const updateMotorics = (value: number) => {
     if (value < 0 && attributes.motorics + value < 1) return;
     dispatch(
-      updateAttribute({ attribute: 'motorics', value: attributes.motorics + value })
+      updateAttribute({
+        attribute: 'motorics',
+        value: attributes.motorics + value,
+      })
     );
   };
 

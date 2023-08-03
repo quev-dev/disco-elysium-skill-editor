@@ -6,8 +6,8 @@ export default function Header() {
       </h1>
       <p className='mb-2'>
         {' '}
-        This is an unofficial, fan-made site which mimics the attributes and skills page
-        from the critically-acclaimed RPG called{' '}
+        This is an unofficial, fan-made site which mimics the attributes and
+        skills page from the critically-acclaimed RPG called{' '}
         <a
           target='_blank'
           rel='noreferrer'
@@ -18,11 +18,12 @@ export default function Header() {
         .
       </p>
       <p className='mb-2'>
-        You can use this web app to create and edit a visual mimic of the player's stats.
+        You can use this web app to create and edit a visual mimic of the
+        player's stats.
       </p>
       <p>
-        I hope players of the game find this app to be fun to use, and that it inspires
-        more people to play it!
+        I hope players of the game find this app to be fun to use, and that it
+        inspires more people to play it!
       </p>
     </header>
   );

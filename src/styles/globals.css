@@ -8,7 +8,8 @@
 }
 @font-face {
   font-family: 'Dobra-Light';
-  src: local('Dobra-Light'), url('../content/fonts/Dobra-Light.woff') format('woff');
+  src: local('Dobra-Light'),
+    url('../content/fonts/Dobra-Light.woff') format('woff');
 }
 
 * {
@@ -140,5 +141,5 @@ blockquote {
 #side-panel-container {
   background: url('../content/images/ui/panel-thin.png');
   background-size: cover;
-  background-repeat: repeat-y;
+  border-radius: var(--border-radius-default);
 }

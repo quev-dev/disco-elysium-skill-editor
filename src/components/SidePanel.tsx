@@ -3,14 +3,24 @@
 import Image from 'next/image';
 import exampleImage from '../content/images/skills/pain-threshold.png';
 
-export default function SidePanel() {
-  const title = 'PAIN THRESHOLD';
-  const description = "Shrug off the pain. They'll have to hurt you more.";
-  const modifier = 3;
-  const score = 0;
+export default function SidePanel({
+  title = '[title]',
+  description = '[example skill description]',
+  modifier = 0,
+  score = 0,
+  skillToMark,
+  updateFunction,
+}: {
+  title: string;
+  description: string;
+  modifier: number;
+  score: number;
+  skillToMark: any;
+  updateFunction: any;
+}) {
   return (
     <aside className='flex flex-row mx-2 gap-2 md:m-12 md:gap-8 2xl:flex-col 2xl:gap-0 2xl:p-0 2xl:m-0'>
-      <ul className='relative'>
+      <ul className='relative md:w-max'>
         <li className='flex flex-row w-full gap-1 items-center justify-center absolute top-2'>
           <button className='no-button-styling'>OVERVIEW</button>
           <p>/</p>

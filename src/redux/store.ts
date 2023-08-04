@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import attributesReducer from './slices/attributesSlice';
 import skillsReducer from './slices/skillsSlice';
+import selectedSkillReducer from './slices/selectedSkillSlice';
 import signatureReducer from './slices/signatureSlice';
 
 export function makeStore() {
@@ -8,6 +9,7 @@ export function makeStore() {
     reducer: {
       attributes: attributesReducer,
       skills: skillsReducer,
+      selectedSkill: selectedSkillReducer,
       signature: signatureReducer,
     },
   });

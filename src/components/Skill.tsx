@@ -11,12 +11,16 @@ export default function Skill({
   modifier = 1,
   title = '[title]',
   isSignature = false,
+  isSelected = false,
+  updateFunction,
 }: {
   imageSource: any;
   score: number;
   modifier: number;
   title: string;
   isSignature: boolean;
+  isSelected: boolean;
+  updateFunction: any;
 }) {
   const isLong = title.length >= 12;
   const isVeryLong = title.length >= 16;
@@ -35,7 +39,10 @@ export default function Skill({
   const diamondLimit = 11;
 
   return (
-    <div className='skill-container'>
+    <div
+      className={`skill-container ${isSelected ? 'selected-skill' : ''}`}
+      onClick={updateFunction}
+    >
       <div className={score === 0 && !isSignature ? 'grayscale' : ''}>
         <Image layout='responsive' src={imageSource} width={368} height={512} alt='' />
       </div>
@@ -53,15 +60,18 @@ export default function Skill({
         </div>
       )}
       <p className='skill-score'>{score + modifier}</p>
-      <h6
-        className={`skill-title text-xs md:text-sm lg:text-base md:tracking-tight md:leading-4 lg:leading-4 ${
-          isLong ? 'w-5/6' : 'w-full'
-        }${isLong && hasSpaces ? ' left-0' : ' '}
-        ${isVeryLong && !hasSpaces ? '-left-2 scale-x-75' : ' '}
+      <div className='w-full flex items-center justify-center'>
+        <h6
+          className={`skill-title text-xs md:text-sm lg:text-base md:tracking-tight md:leading-4 lg:leading-4 ${
+            isLong ? 'w-5/6' : 'w-full'
+          }${isLong && hasSpaces ? ' left-0 ' : ' '}
+        ${isVeryLong && !hasSpaces ? '-left-2 scale-x-75 ' : ' '}
+        ${isSelected ? 'bg-c-white text-c-black max-w-max' : ''}
         `}
-      >
-        {title}
-      </h6>
+        >
+          {title}
+        </h6>
+      </div>
       <ul className='absolute bottom-10 w-full flex justify-center z-10'>
         <li className='flex flex-wrap items-center justify-center gap-1'>
           {totalDiamonds <= diamondLimit && (

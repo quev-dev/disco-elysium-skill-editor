@@ -12,3 +12,9 @@ button:hover {
 .skill-container:active {
   filter: brightness(150%);
 }
+
+.selected-skill:hover {
+  outline: 4px solid var(--c-white);
+  border-radius: var(--border-radius-default);
+  filter: brightness(150%);
+}

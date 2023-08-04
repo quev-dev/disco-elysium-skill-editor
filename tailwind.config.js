@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         'c-light-gray': '#2a2e2c',
         'c-accent': '#d7441a',
-        'c-white': '#fcfeff',
+        'c-white': '#fbfbfb',
         'c-black': '#050505',
         'c-gray': '#171918',
       },

@@ -22,7 +22,7 @@
   --c-lighter-gray: #3b413e;
   --c-light-gray: #2a2e2c;
   --c-accent: #d7441a;
-  --c-white: #fcfeff;
+  --c-white: #fbfbfb;
   --c-black: #050505;
   --c-gray: #171918;
 
@@ -92,7 +92,7 @@ blockquote {
 .selected-skill {
   outline: 4px solid var(--c-white);
   border-radius: var(--border-radius-default);
-  filter: brightness(150%);
+  filter: brightness(125%);
 }
 
 .skill-score {

@@ -5,6 +5,7 @@ import { RootState } from '../redux/store';
 import { skillImages } from '@/utils/skillImages';
 import { updateAttribute } from '../redux/slices/attributesSlice';
 import { setSelectedSkill } from '../redux/slices/selectedSkillSlice';
+
 import Skill from './Skill';
 import Attribute from './Attribute';
 

@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type SelectedSkillState = string;
 
-const initialState: SelectedSkillState = '';
+const initialState: SelectedSkillState = 'logic';
 
 const selectedSkillSlice = createSlice({
   name: 'selectedSkill',

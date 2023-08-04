@@ -60,18 +60,15 @@ export default function Skill({
         </div>
       )}
       <p className='skill-score'>{score + modifier}</p>
-      <div className='w-full flex items-center justify-center'>
-        <h6
-          className={`skill-title text-xs md:text-sm lg:text-base md:tracking-tight md:leading-4 lg:leading-4 ${
-            isLong ? 'w-5/6' : 'w-full'
-          }${isLong && hasSpaces ? ' left-0 ' : ' '}
-        ${isVeryLong && !hasSpaces ? '-left-2 scale-x-75 ' : ' '}
-        ${isSelected ? 'bg-c-white text-c-black max-w-max' : ''}
-        `}
-        >
-          {title}
-        </h6>
-      </div>
+      <h6
+        className={`skill-title text-xs md:text-sm lg:text-base md:tracking-tight md:leading-4 lg:leading-4 ${
+          isLong ? 'w-5/6' : 'w-full'
+        }${isLong && hasSpaces ? ' left-0 ' : ' '}${
+          isVeryLong && !hasSpaces ? '-left-2 scale-x-75 ' : ' '
+        }`}
+      >
+        {title}
+      </h6>
       <ul className='absolute bottom-10 w-full flex justify-center z-10'>
         <li className='flex flex-wrap items-center justify-center gap-1'>
           {totalDiamonds <= diamondLimit && (

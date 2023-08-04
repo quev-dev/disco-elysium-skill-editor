@@ -72,9 +72,10 @@ const skillsSlice = createSlice({
       const { skill, value } = action.payload;
       const skillName = attributeMap[skill] as keyof SkillState;
       if (skillName) {
+        const newValue = Math.max(0, value);
         return {
           ...state,
-          [skillName]: value,
+          [skillName]: newValue,
         };
       }
       return state;

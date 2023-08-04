@@ -26,6 +26,7 @@ export default function Home() {
           </li>
         </ul>
       </main>
+      <p className='text-center mt-12 xl:mt-20'>-</p>
       <Footer />
     </Provider>
   );

@@ -54,7 +54,7 @@ html {
 
 body {
   font-family: 'Dobra', sans-serif;
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+  background: linear-gradient(rgba(0, 1, 8, 0.95), rgba(0, 0, 0, 0.75)),
     url('../content/images/backgrounds/background-2.webp');
   background-size: cover;
 

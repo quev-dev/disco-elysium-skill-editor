@@ -15,8 +15,6 @@ export default function Home() {
     <Provider store={store}>
       <Header />
 
-      <p className='text-center md:mb-4'>-</p>
-
       <main className='py-2'>
         <Points />
         <ul className='flex flex-col 2xl:flex-row justify-center items-center'>
@@ -28,8 +26,6 @@ export default function Home() {
           </li>
         </ul>
       </main>
-
-      <p className='text-center mt-12 xl:mt-20'>-</p>
 
       <Footer />
     </Provider>

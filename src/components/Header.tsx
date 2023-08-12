@@ -1,6 +1,12 @@
+import Image from 'next/image';
+import iconBrush from '../content/icons/brush.webp';
+
 export default function Header() {
   return (
     <header className='pt-8 pb-4 px-12 md:w-2/3 md:mx-auto md:pb-12 lg:w-1/2 xl:w-5/12'>
+      <div className='flex md:mt-16 justify-center'>
+        <Image src={iconBrush} width={128} height={128} alt='' />
+      </div>
       <h1 className='text-4xl md:text-5xl text-center m-4 mb-8 md:mt-16 md:mb-4 font-bold'>
         Disco Elysium Skill Editor
       </h1>

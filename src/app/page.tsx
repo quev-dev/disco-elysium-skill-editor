@@ -14,7 +14,6 @@ export default function Home() {
   return (
     <Provider store={store}>
       <Header />
-
       <main className='py-2'>
         <Points />
         <ul className='flex flex-col 2xl:flex-row justify-center items-center'>
@@ -26,7 +25,6 @@ export default function Home() {
           </li>
         </ul>
       </main>
-
       <Footer />
     </Provider>
   );

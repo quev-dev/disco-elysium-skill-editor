@@ -11,6 +11,7 @@ module.exports = {
         'c-light-gray': '#2a2e2c',
         'c-accent': '#d7441a',
         'c-white': '#fbfbfb',
+        'c-white-dim': '#7e7e7e',
         'c-black': '#050505',
         'c-gray': '#171918',
       },

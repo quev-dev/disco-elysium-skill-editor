@@ -58,7 +58,7 @@ export default function SkillsContainer() {
   };
 
   return (
-    <ul className='flex flex-row md:flex-col gap-1 md:gap-2'>
+    <ul className='flex flex-row md:flex-col gap-1 md:gap-1'>
       <li className='flex flex-col md:flex-row gap-2'>
         <div className='md:w-1/6'>
           <Attribute

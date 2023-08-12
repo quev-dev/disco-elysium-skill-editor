@@ -23,6 +23,7 @@
   --c-light-gray: #2a2e2c;
   --c-accent: #d7441a;
   --c-white: #fbfbfb;
+  --c-white-dim: #7e7e7e;
   --c-black: #050505;
   --c-gray: #171918;
 
@@ -138,13 +139,45 @@ blockquote {
   filter: grayscale(100%) brightness(50%);
 }
 
+.darkened {
+  filter: brightness(20%);
+}
+
 #skill-container {
   background: url('../content/images/ui/panel-thick-horizontal.png');
   background-size: cover;
   background-repeat: repeat-x;
+  box-shadow: 24px 24px 24px black;
 }
 #side-panel-container {
-  background: url('../content/images/ui/panel-thin.png');
+  position: relative;
+  background-color: black;
+  border-radius: var(--border-radius-default);
+  overflow: hidden;
+  box-shadow: 24px 24px 24px rgba(0, 0, 0, 0.658);
+}
+
+#side-panel-container::before,
+#side-panel-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  background-image: url('../content/images/ui/panel-thin.png');
   background-size: cover;
   border-radius: var(--border-radius-default);
+}
+
+#side-panel-container::before {
+  left: 0;
+}
+
+#side-panel-container::after {
+  right: 0;
+}
+
+#panel-skill-title {
+  background-image: url('../content/images/ui/paint-white.png');
+  background-size: cover;
 }

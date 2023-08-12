@@ -15,12 +15,12 @@ export default function Points() {
   const inGameLimit = 8;
 
   return (
-    <article className='mt-8 mx-12 mb-4 flex flex-col gap-2 md:w-2/3 md:mx-auto md:mb-8 lg:w-1/2 xl:w-5/12'>
+    <article className='mb-4 md:mb-8 px-12 md:w-2/3 md:mx-auto lg:w-1/2 xl:w-5/12'>
       <aside>
         <p>
-          Spend up to <b>8</b> points on attributes. You can go over the limit
-          in this app, though you will not be able to obtain those attributes
-          within the official game.
+          Spend up to <b>8</b> points on attributes. You can go over the limit in this
+          app, though you will not be able to obtain those attributes within the official
+          game.
         </p>
       </aside>
       <div className='text-center text-2xl'>

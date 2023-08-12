@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className='py-8 px-12 md:w-2/3 md:mx-auto md:pb-16 lg:w-1/2 xl:w-5/12'>
+    <header className='pt-8 pb-4 px-12 md:w-2/3 md:mx-auto md:pb-12 lg:w-1/2 xl:w-5/12'>
       <h1 className='text-4xl md:text-5xl text-center m-4 mb-8 md:mt-16 md:mb-4 font-bold'>
         Disco Elysium Skill Editor
       </h1>

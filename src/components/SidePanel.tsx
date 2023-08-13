@@ -1,7 +1,10 @@
 'use client';
 
 import { updateSkill } from '@/redux/slices/skillsSlice';
-import { setSignatureSkill, resetSignatureSkill } from '../redux/slices/signatureSlice';
+import {
+  setSignatureSkill,
+  resetSignatureSkill,
+} from '../redux/slices/signatureSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { RootState } from '../redux/store';
@@ -27,7 +30,8 @@ export default function SidePanel() {
   function convertTitle(input: string): string {
     const words = input.replace(/([a-z])([A-Z])/g, '$1 $2');
     let allCaps = words.toUpperCase();
-    if (allCaps === 'HAND EYE COORDINATION') allCaps = 'HAND / EYE COORDINATION';
+    if (allCaps === 'HAND EYE COORDINATION')
+      allCaps = 'HAND / EYE COORDINATION';
     return allCaps;
   }
 
@@ -91,27 +95,35 @@ export default function SidePanel() {
   const diamondLimit = 9;
 
   const modifySkill = (value: number) => {
-    let newValue = Math.min(skills[selectedSkill] + value, attributes[currentAttribute]);
-    console.log(newValue);
+    let newValue = Math.min(
+      skills[selectedSkill] + value,
+      attributes[currentAttribute]
+    );
     dispatch(updateSkill({ skill: selectedSkill, value: newValue }));
   };
 
   return (
-    <aside className='flex flex-row mx-2 gap-2 md:m-12 md:gap-8 2xl:flex-col 2xl:gap-0 2xl:p-0 2xl:m-0 justify-center items-center 2xl:py-16 rounded-md'>
-      <ul className='relative w-1/2 lg:w-max'>
+    <aside className='flex flex-row mx-2 gap-2 md:m-12 md:gap-8 2xl:flex-col 2xl:gap-0 2xl:p-0 2xl:m-0 justify-center items-center 2xl:py-12 rounded-md'>
+      <ul className='relative w-1/2 2xl:w-full'>
         <li className='z-10 flex flex-row w-full gap-1 items-center justify-center absolute top-2'>
           {!toggleInfo && (
             <>
               <p className='bg-c-white text-c-black px-1'>OVERVIEW</p>
               <p>/</p>
-              <button onClick={() => setToggleInfo(true)} className='no-button-styling'>
+              <button
+                onClick={() => setToggleInfo(true)}
+                className='no-button-styling'
+              >
                 INFO
               </button>
             </>
           )}
           {toggleInfo && (
             <>
-              <button onClick={() => setToggleInfo(false)} className='no-button-styling'>
+              <button
+                onClick={() => setToggleInfo(false)}
+                className='no-button-styling'
+              >
                 OVERVIEW
               </button>
               <p>/</p>
@@ -136,24 +148,40 @@ export default function SidePanel() {
           {totalDiamonds <= diamondLimit && (
             <>
               {Array.from({ length: filledDiamonds }).map((_, index) => (
-                <Image key={index} src={iconDiamondFill} width={32} height={32} alt='' />
-              ))}
-              {Array.from({ length: remainingOutlineDiamonds }).map((_, index) => (
                 <Image
                   key={index}
-                  src={iconDiamondOutline}
+                  src={iconDiamondFill}
                   width={32}
                   height={32}
                   alt=''
                 />
               ))}
+              {Array.from({ length: remainingOutlineDiamonds }).map(
+                (_, index) => (
+                  <Image
+                    key={index}
+                    src={iconDiamondOutline}
+                    width={32}
+                    height={32}
+                    alt=''
+                  />
+                )
+              )}
             </>
           )}
           {totalDiamonds > diamondLimit && (
             <>
-              {Array.from({ length: Math.min(score, diamondLimit) }).map((_, index) => (
-                <Image key={index} src={iconDiamondFill} width={32} height={32} alt='' />
-              ))}
+              {Array.from({ length: Math.min(score, diamondLimit) }).map(
+                (_, index) => (
+                  <Image
+                    key={index}
+                    src={iconDiamondFill}
+                    width={32}
+                    height={32}
+                    alt=''
+                  />
+                )
+              )}
               {Array.from({ length: Math.max(diamondLimit - score, 0) }).map(
                 (_, index) => (
                   <Image
@@ -170,7 +198,13 @@ export default function SidePanel() {
           )}
         </li>
         <li className={`${toggleInfo ? 'darkened' : ''} mx-2`}>
-          <Image layout='responsive' src={skillImage} width={368} height={512} alt='' />
+          <Image
+            layout='responsive'
+            src={skillImage}
+            width={368}
+            height={512}
+            alt=''
+          />
         </li>
         <li className='absolute hidden top-0 left-0 w-full h-full 2xl:flex flex-col items-center justify-center'>
           {toggleInfo && (
@@ -203,9 +237,12 @@ export default function SidePanel() {
                 </p>
               )}
               <p className='text-c-white-dim font-bold'>
-                {currentAttribute.charAt(0).toUpperCase() + currentAttribute.slice(1)}{' '}
+                {currentAttribute.charAt(0).toUpperCase() +
+                  currentAttribute.slice(1)}{' '}
                 base:{' '}
-                <span className='text-c-white'>+{attributes[currentAttribute]}</span>
+                <span className='text-c-white'>
+                  +{attributes[currentAttribute]}
+                </span>
               </p>
               <p className='text-c-white-dim font-bold'>
                 Learned skill:{' '}

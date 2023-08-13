@@ -36,7 +36,9 @@ export default function SkillsContainer() {
   };
   const updatePsyche = (value: number) => {
     if (value < 0 && attributes.psyche + value < 1) return;
-    dispatch(updateAttribute({ attribute: 'psyche', value: attributes.psyche + value }));
+    dispatch(
+      updateAttribute({ attribute: 'psyche', value: attributes.psyche + value })
+    );
   };
   const updatePhysique = (value: number) => {
     if (value < 0 && attributes.physique + value < 1) return;

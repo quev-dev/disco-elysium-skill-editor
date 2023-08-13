@@ -44,7 +44,13 @@ export default function Skill({
       onClick={updateFunction}
     >
       <div className={score === 0 && !isSignature ? 'grayscale' : ''}>
-        <Image layout='responsive' src={imageSource} width={368} height={512} alt='' />
+        <Image
+          layout='responsive'
+          src={imageSource}
+          width={368}
+          height={512}
+          alt=''
+        />
       </div>
       {isSignature && (
         <div className='absolute top-0 w-full flex items-center justify-center'>
@@ -61,7 +67,7 @@ export default function Skill({
       )}
       <p className='skill-score'>{score + modifier}</p>
       <h6
-        className={`skill-title text-xs md:text-sm lg:text-base md:tracking-tight md:leading-4 lg:leading-4 ${
+        className={`skill-title text-xs md:text-sm 2xl:text-base md:tracking-tight md:leading-4 2xl:leading-4 ${
           isLong ? 'w-5/6' : 'w-full'
         }${isLong && hasSpaces ? ' left-0 ' : ' '}${
           isVeryLong && !hasSpaces ? '-left-2 scale-x-75 ' : ' '
@@ -74,24 +80,40 @@ export default function Skill({
           {totalDiamonds <= diamondLimit && (
             <>
               {Array.from({ length: filledDiamonds }).map((_, index) => (
-                <Image key={index} src={iconDiamondFill} width={14} height={14} alt='' />
-              ))}
-              {Array.from({ length: remainingOutlineDiamonds }).map((_, index) => (
                 <Image
                   key={index}
-                  src={iconDiamondOutline}
+                  src={iconDiamondFill}
                   width={14}
                   height={14}
                   alt=''
                 />
               ))}
+              {Array.from({ length: remainingOutlineDiamonds }).map(
+                (_, index) => (
+                  <Image
+                    key={index}
+                    src={iconDiamondOutline}
+                    width={14}
+                    height={14}
+                    alt=''
+                  />
+                )
+              )}
             </>
           )}
           {totalDiamonds > diamondLimit && (
             <>
-              {Array.from({ length: Math.min(score, diamondLimit) }).map((_, index) => (
-                <Image key={index} src={iconDiamondFill} width={14} height={14} alt='' />
-              ))}
+              {Array.from({ length: Math.min(score, diamondLimit) }).map(
+                (_, index) => (
+                  <Image
+                    key={index}
+                    src={iconDiamondFill}
+                    width={14}
+                    height={14}
+                    alt=''
+                  />
+                )
+              )}
               {Array.from({ length: Math.max(diamondLimit - score, 0) }).map(
                 (_, index) => (
                   <Image

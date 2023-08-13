@@ -13,19 +13,14 @@ export default function Attribute({
   updateFunction: any;
 }) {
   const renderDiamonds = () => {
-    const maxDiamonds = 11;
+    const maxDiamonds = 9;
     const diamonds = [];
     const renderedDiamonds = Math.min(score, maxDiamonds);
 
     for (let i = 0; i < renderedDiamonds; i++) {
       diamonds.push(
         <li className='relative' key={i}>
-          <Image
-            src={iconDiamondFill}
-            alt=''
-            width={score > 0 ? (window.innerWidth < 768 ? 8 : 16) : 0}
-            height={score > 0 ? (window.innerWidth < 768 ? 8 : 16) : 0}
-          />
+          <Image src={iconDiamondFill} alt='' width={16} height={16} />
         </li>
       );
     }
@@ -43,11 +38,15 @@ export default function Attribute({
     return diamonds;
   };
 
+  const isOverClass = score > 6 ? 'text-c-accent' : 'text-c-white';
+
   return (
     <aside className='flex flex-col items-center justify-center h-full w-full'>
       <div>
         <div className='flex flex-col-reverse md:flex-row gap-2 items-center justify-center'>
-          <p className='font-bold text-5xl md:text-8xl tracking-tighter'>{score}</p>
+          <p className={`font-bold text-5xl md:text-8xl tracking-tighter ${isOverClass}`}>
+            {score}
+          </p>
           <div className='flex flex-col items-center justify-center relative top-1 gap-1'>
             <button
               onClick={() => updateFunction(1)}
@@ -64,11 +63,13 @@ export default function Attribute({
           </div>
         </div>
       </div>
-      <ul className='flex flex-wrap items-center justify-center gap-x-0.5 md:gap-x-1 gap-y-0.5 md:gap-y-1 mb-2'>
+      <ul className='hidden md:flex flex-wrap items-center justify-center gap-x-0.5 md:gap-x-1 gap-y-0.5 md:gap-y-1 mb-2'>
         {renderDiamonds()}
       </ul>
-      <h5 className='text-xl hidden md:inline lg:text-2xl'>{attributeName}</h5>
-      <h5 className='text-2xl md:hidden'>{attributeName.slice(0, 3)}</h5>
+      <h5 className={`text-xl hidden md:inline lg:text-2xl ${isOverClass}`}>
+        {attributeName}
+      </h5>
+      <h5 className={`text-2xl md:hidden ${isOverClass}`}>{attributeName.slice(0, 3)}</h5>
     </aside>
   );
 }

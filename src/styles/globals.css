@@ -101,7 +101,7 @@ blockquote {
   border-radius: var(--border-radius-default);
   color: var(--c-black);
 
-  width: 0.75em;
+  width: 0.9em;
   height: 1.25em;
   right: 4px;
   bottom: 4px;

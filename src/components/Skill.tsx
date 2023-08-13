@@ -36,7 +36,7 @@ export default function Skill({
   const remainingOutlineDiamonds = Math.max(newModifier - score, 0);
 
   const totalDiamonds = newModifier;
-  const diamondLimit = 11;
+  const diamondLimit = 9;
 
   return (
     <div

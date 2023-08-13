@@ -172,7 +172,7 @@ export default function SidePanel() {
         <li className={`${toggleInfo ? 'darkened' : ''} mx-2`}>
           <Image layout='responsive' src={skillImage} width={368} height={512} alt='' />
         </li>
-        <li className='absolute hidden top-0 left-0 w-full h-full md:flex flex-col items-center justify-center'>
+        <li className='absolute hidden top-0 left-0 w-full h-full 2xl:flex flex-col items-center justify-center'>
           {toggleInfo && (
             <aside className='flex flex-col gap-4 h-5/6 overflow-y-scroll p-4'>
               <p>{skillDescriptions[selectedSkill][1].toUpperCase()}</p>
@@ -191,8 +191,8 @@ export default function SidePanel() {
         </li>
       </ul>
       {!toggleInfo && (
-        <div className='w-1/2 lg:w-max flex flex-col items-center justify-center gap-2 md:gap-0'>
-          <ul className='w-full flex flex-col gap-1 mt-2'>
+        <div className='w-1/2 2xl:w-full flex flex-col items-center justify-center gap-2 md:gap-0'>
+          <ul className='flex flex-col w-full lg:w-1/2 2xl:w-full gap-1 mt-2'>
             <li>
               <p>{skillHeadline}</p>
             </li>
@@ -235,7 +235,7 @@ export default function SidePanel() {
         </div>
       )}
       {toggleInfo && (
-        <aside className='flex md:hidden flex-col gap-4 w-3/4 h-64 overflow-y-scroll pr-4'>
+        <aside className='flex 2xl:hidden flex-col gap-4 w-3/4 h-64 overflow-y-scroll pr-4'>
           <p>{skillDescriptions[selectedSkill][1].toUpperCase()}</p>
           <p>{skillDescriptions[selectedSkill][2]}</p>
           <p>{skillDescriptions[selectedSkill][3]}</p>

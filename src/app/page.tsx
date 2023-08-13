@@ -33,10 +33,7 @@ export default function Home() {
           <li id='skill-container' className='2xl:px-24 py-8 2xl:w-2/3'>
             <SkillContainer />
           </li>
-          <li
-            id='side-panel-container'
-            className='w-full md:max-w-max 2xl:px-24 py-8 2xl:w-1/3'
-          >
+          <li id='side-panel-container' className='w-full 2xl:px-24 py-8 2xl:w-1/3'>
             <SidePanel />
           </li>
         </ul>

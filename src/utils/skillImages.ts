@@ -23,7 +23,11 @@ import imageSuggestion from '../content/images/skills/suggestion.png';
 import imageVisualCalculus from '../content/images/skills/visual-calculus.png';
 import imageVolition from '../content/images/skills/volition.png';
 
-export const skillImages = {
+interface SkillImages {
+  [key: string]: any;
+}
+
+export const skillImages: SkillImages = {
   authority: imageAuthority,
   composure: imageComposure,
   conceptualization: imageConceptualization,

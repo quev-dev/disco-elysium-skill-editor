@@ -1,4 +1,5 @@
 export interface AttributeState {
+  [key: string]: number;
   intellect: number;
   psyche: number;
   physique: number;
@@ -6,6 +7,7 @@ export interface AttributeState {
 }
 
 export interface SkillState {
+  [key: string]: number;
   logic: number;
   encyclopedia: number;
   rhetoric: number;
